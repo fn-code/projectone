@@ -1,1 +1,0 @@
-/usr/bin/clang++  -g -Wall -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/projectone.dir/src/ExampleApp.cpp.o CMakeFiles/projectone.dir/src/Addition.cpp.o CMakeFiles/projectone.dir/src/Multiply.cpp.o  -o projectone 
