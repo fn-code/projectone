@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/projectone.dir/src/Addition.cpp.o"
   "CMakeFiles/projectone.dir/src/ExampleApp.cpp.o"
+  "CMakeFiles/projectone.dir/src/Multiply.cpp.o"
   "projectone"
   "projectone.pdb"
 )

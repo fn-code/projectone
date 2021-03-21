@@ -17,17 +17,16 @@ set(CMAKE_CXX_FLAGS "-g -Wall")
 # include
 include_directories( ./include ./src)
 
-# set(Sources
-#     ./src/ExampleApp.cpp
-#     ./src/Addition.cpp
-#     ./src/Multiply.cpp
-# )
-
-add_library(Addition ./src/Addition.cpp ./include/projectone/Addition.h)
-add_library(Multiply ./src/Multiply.cpp ./include/projectone/Multiply.h)
+set(Sources
+    ./src/ExampleApp.cpp
+    ./src/Addition.cpp
+    ./src/Multiply.cpp
+)
 
 # target
-# add_executable(${This}  ${Sources})
-add_executable(${This} ./src/ExampleApp.cpp)
+add_executable(${This}  ${Sources})
 
-target_link_libraries(${This} PRIVATE Addition Multiply)
+enable_testing()
+
+add_subdirectory("${PROJECT_SOURCE_DIR}/third_party/googletest")
+add_subdirectory(test)

@@ -10,6 +10,10 @@
 
 ../include/projectone/Multiply.h
 
+/Users/ludinnento/funproject/c_c++/projectone/src/Addition.cpp
+projectone/Addition.h
+/Users/ludinnento/funproject/c_c++/projectone/src/projectone/Addition.h
+
 /Users/ludinnento/funproject/c_c++/projectone/src/ExampleApp.cpp
 projectone/Addition.h
 /Users/ludinnento/funproject/c_c++/projectone/src/projectone/Addition.h
@@ -17,4 +21,8 @@ projectone/Multiply.h
 /Users/ludinnento/funproject/c_c++/projectone/src/projectone/Multiply.h
 stdio.h
 -
+
+/Users/ludinnento/funproject/c_c++/projectone/src/Multiply.cpp
+projectone/Multiply.h
+/Users/ludinnento/funproject/c_c++/projectone/src/projectone/Multiply.h
 

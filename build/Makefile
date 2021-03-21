@@ -76,6 +76,30 @@ CMAKE_BINARY_DIR = /Users/ludinnento/funproject/c_c++/projectone/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.17.3/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.17.3/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.17.3/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.17.3/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -97,6 +121,39 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.17.3/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.17.3/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/Cellar/cmake/3.17.3/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -144,30 +201,69 @@ projectone/fast:
 .PHONY : projectone/fast
 
 #=============================================================================
-# Target rules for targets named Multiply
+# Target rules for targets named gmock
 
 # Build rule for target.
-Multiply: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Multiply
-.PHONY : Multiply
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
 # fast build rule for target.
-Multiply/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Multiply.dir/build.make CMakeFiles/Multiply.dir/build
-.PHONY : Multiply/fast
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f third_party/googletest/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
 #=============================================================================
-# Target rules for targets named Addition
+# Target rules for targets named gmock_main
 
 # Build rule for target.
-Addition: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Addition
-.PHONY : Addition
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
 # fast build rule for target.
-Addition/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Addition.dir/build.make CMakeFiles/Addition.dir/build
-.PHONY : Addition/fast
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f third_party/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f third_party/googletest/googletest/CMakeFiles/gtest_main.dir/build.make third_party/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f third_party/googletest/googletest/CMakeFiles/gtest.dir/build.make third_party/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named projectoneTest
+
+# Build rule for target.
+projectoneTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 projectoneTest
+.PHONY : projectoneTest
+
+# fast build rule for target.
+projectoneTest/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/projectoneTest.dir/build.make test/CMakeFiles/projectoneTest.dir/build
+.PHONY : projectoneTest/fast
 
 src/Addition.o: src/Addition.cpp.o
 
@@ -175,7 +271,7 @@ src/Addition.o: src/Addition.cpp.o
 
 # target to build an object file
 src/Addition.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Addition.dir/build.make CMakeFiles/Addition.dir/src/Addition.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projectone.dir/build.make CMakeFiles/projectone.dir/src/Addition.cpp.o
 .PHONY : src/Addition.cpp.o
 
 src/Addition.i: src/Addition.cpp.i
@@ -184,7 +280,7 @@ src/Addition.i: src/Addition.cpp.i
 
 # target to preprocess a source file
 src/Addition.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Addition.dir/build.make CMakeFiles/Addition.dir/src/Addition.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projectone.dir/build.make CMakeFiles/projectone.dir/src/Addition.cpp.i
 .PHONY : src/Addition.cpp.i
 
 src/Addition.s: src/Addition.cpp.s
@@ -193,7 +289,7 @@ src/Addition.s: src/Addition.cpp.s
 
 # target to generate assembly for a file
 src/Addition.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Addition.dir/build.make CMakeFiles/Addition.dir/src/Addition.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projectone.dir/build.make CMakeFiles/projectone.dir/src/Addition.cpp.s
 .PHONY : src/Addition.cpp.s
 
 src/ExampleApp.o: src/ExampleApp.cpp.o
@@ -229,7 +325,7 @@ src/Multiply.o: src/Multiply.cpp.o
 
 # target to build an object file
 src/Multiply.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Multiply.dir/build.make CMakeFiles/Multiply.dir/src/Multiply.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projectone.dir/build.make CMakeFiles/projectone.dir/src/Multiply.cpp.o
 .PHONY : src/Multiply.cpp.o
 
 src/Multiply.i: src/Multiply.cpp.i
@@ -238,7 +334,7 @@ src/Multiply.i: src/Multiply.cpp.i
 
 # target to preprocess a source file
 src/Multiply.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Multiply.dir/build.make CMakeFiles/Multiply.dir/src/Multiply.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projectone.dir/build.make CMakeFiles/projectone.dir/src/Multiply.cpp.i
 .PHONY : src/Multiply.cpp.i
 
 src/Multiply.s: src/Multiply.cpp.s
@@ -247,7 +343,7 @@ src/Multiply.s: src/Multiply.cpp.s
 
 # target to generate assembly for a file
 src/Multiply.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Multiply.dir/build.make CMakeFiles/Multiply.dir/src/Multiply.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projectone.dir/build.make CMakeFiles/projectone.dir/src/Multiply.cpp.s
 .PHONY : src/Multiply.cpp.s
 
 # Help Target
@@ -257,10 +353,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Addition"
-	@echo "... Multiply"
+	@echo "... test"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... projectone"
+	@echo "... projectoneTest"
 	@echo "... src/Addition.o"
 	@echo "... src/Addition.i"
 	@echo "... src/Addition.s"
