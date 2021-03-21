@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/projectone/Addition.h
+
+/Users/ludinnento/funproject/c_c++/projectone/src/Addition.cpp
+projectone/Addition.h
+/Users/ludinnento/funproject/c_c++/projectone/src/projectone/Addition.h
+

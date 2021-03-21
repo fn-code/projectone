@@ -14,10 +14,19 @@ class AdditionTest : public ::testing::Test {
   }
 };
 
-TEST_F(AdditionTest,twoValues){
+TEST_F(AdditionTest, twoValues){
     const int x = 4;
     const int y = 5;
-    Addition addition;
+    projectone::Addition addition;
     EXPECT_EQ(9,addition.twoValues(x,y));
     EXPECT_EQ(5,addition.twoValues(2,3));
+}
+
+TEST_F(AdditionTest, threeValues) {
+  const int x = 2;
+  const int y = 4;
+  const int z = 1;
+
+  projectone::Addition addition;
+  EXPECT_EQ(7, addition.threeValues(x, y, z));
 }

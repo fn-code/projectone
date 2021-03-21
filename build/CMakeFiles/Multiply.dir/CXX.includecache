@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/projectone/Multiply.h
+
+/Users/ludinnento/funproject/c_c++/projectone/src/Multiply.cpp
+projectone/Multiply.h
+/Users/ludinnento/funproject/c_c++/projectone/src/projectone/Multiply.h
+

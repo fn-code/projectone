@@ -1,0 +1,5 @@
+/Users/ludinnento/funproject/c_c++/projectone/build/CMakeFiles/projectone.dir
+/Users/ludinnento/funproject/c_c++/projectone/build/CMakeFiles/rebuild_cache.dir
+/Users/ludinnento/funproject/c_c++/projectone/build/CMakeFiles/edit_cache.dir
+/Users/ludinnento/funproject/c_c++/projectone/build/CMakeFiles/Multiply.dir
+/Users/ludinnento/funproject/c_c++/projectone/build/CMakeFiles/Addition.dir
